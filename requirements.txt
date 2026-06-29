@@ -1,0 +1,5 @@
+# Pinned to the versions verified on 2026-06-29 (Python 3.12).
+# Transitive dependencies are resolved automatically by pip.
+google-adk==2.3.0
+fastmcp==3.4.2
+python-dotenv==1.2.2

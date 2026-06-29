@@ -1,0 +1,12 @@
+# Secrets — NEVER commit the real key
+.env
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# ADK / local runtime
+.adk/
+*.session.json

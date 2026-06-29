@@ -1,0 +1,50 @@
+[
+  {
+    "sku": "ARGAN-30",
+    "name": "Argan Oil",
+    "size": "30ml",
+    "concerns": ["dry skin", "hair", "nails"],
+    "short_desc": "Lightweight nourishing oil that helps moisturize skin, hair and nails.",
+    "price_eur": 14.9
+  },
+  {
+    "sku": "ROSEHIP-30",
+    "name": "Rosehip Oil",
+    "size": "30ml",
+    "concerns": ["aging skin", "fine lines", "dullness"],
+    "short_desc": "Rich in essential fatty acids; helps soften the appearance of fine lines and dullness.",
+    "price_eur": 16.5
+  },
+  {
+    "sku": "ALOE-100",
+    "name": "Aloe Vera Gel",
+    "size": "100ml",
+    "concerns": ["sensitive skin", "soothing", "redness"],
+    "short_desc": "Cooling gel that helps soothe and comfort sensitive skin.",
+    "price_eur": 9.9
+  },
+  {
+    "sku": "SHEA-100",
+    "name": "Shea Butter",
+    "size": "100g",
+    "concerns": ["very dry skin", "body"],
+    "short_desc": "Deeply nourishing butter for very dry skin and body care.",
+    "price_eur": 12.0
+  },
+  {
+    "sku": "CLAYMASK-100",
+    "name": "Clay Face Mask",
+    "size": "100g",
+    "concerns": ["oily skin", "combination skin"],
+    "short_desc": "Purifying clay mask that helps mattify oily and combination skin.",
+    "price_eur": 13.5
+  },
+  {
+    "sku": "ROSEWATER-100",
+    "name": "Rose Water",
+    "size": "100ml",
+    "concerns": ["toning", "sensitive skin"],
+    "short_desc": "Gentle floral toner traditionally used in Moroccan skincare.",
+    "price_eur": 8.5
+  }
+]

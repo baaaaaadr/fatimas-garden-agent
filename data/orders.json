@@ -1,0 +1,20 @@
+[
+  {
+    "order_id": "ORD-1042",
+    "items": [{"sku": "ARGAN-30", "qty": 2}],
+    "status": "shipped",
+    "tracking": "TRK-1042"
+  },
+  {
+    "order_id": "ORD-1043",
+    "items": [{"sku": "ROSEHIP-30", "qty": 1}, {"sku": "ALOE-100", "qty": 1}],
+    "status": "processing",
+    "tracking": null
+  },
+  {
+    "order_id": "ORD-1044",
+    "items": [{"sku": "ROSEWATER-100", "qty": 3}],
+    "status": "delivered",
+    "tracking": "TRK-1044"
+  }
+]
