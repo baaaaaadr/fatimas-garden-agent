@@ -32,9 +32,9 @@ flowchart TD
 ## Concepts demonstrated (Kaggle requires ≥ 3)
 | # | Concept | Where in the code |
 |---|---|---|
-| 1 | **Multi-agent system (ADK)** | `agents/coordinator.py` — the **Orchestrator** with `sub_agents=[product_advisor, order_agent]` |
+| 1 | **Multi-agent system (ADK)** | `agents/coordinator.py` — the **Orchestrator** orchestrating `product_advisor` & `order_agent` via `AgentTool` |
 | 2 | **Custom MCP server** | `mcp_server/server.py` (fastmcp/stdio) ↔ `agents/order_agent.py` (`McpToolset`) |
-| 3 | **Security: guardrail + HITL** | `guardrails/claims_filter.py` (+ `after_model_callback`) and the approval gate in `main.py` |
+| 3 | **Security: guardrail + HITL** | `guardrails/claims_filter.py` + the `send_reply` approval gate — a **human-approval pause shown live in `adk web`** (and `main.py`) |
 
 The 4th concept, **Antigravity** (the IDE), is shown in the video only — it is not code.
 
