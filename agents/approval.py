@@ -31,12 +31,20 @@ def send_reply(reply: str, tool_context: ToolContext) -> dict:
     confirmation = tool_context.tool_confirmation
     if not confirmation:
         # First call: ask a human to approve before anything is sent.
+        # Surface the guardrail result in the bold hint so it is visible in adk web.
+        if screened["status"] == "ok":
+            hint = "Approve sending this reply?   GUARDRAIL: compliant (no medical claims)."
+        else:
+            hint = (
+                f"Approve sending this reply?   GUARDRAIL rewrote {len(screened['issues'])} "
+                f"forbidden claim(s): {', '.join(screened['issues'])}."
+            )
         tool_context.request_confirmation(
-            hint="Approve sending this reply to the customer? (compliance already checked)",
+            hint=hint,
             payload={
                 "reply": safe_reply,
-                "compliance": screened["status"],
-                "issues": screened["issues"],
+                "guardrail": screened["status"],
+                "rewrote": screened["issues"],
             },
         )
         return {
