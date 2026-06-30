@@ -101,7 +101,7 @@ server tools** (never reads JSON directly — it goes through MCP). Returns clea
 
 | # | Concept | Where | How |
 |---|---|---|---|
-| 1 | **Multi-agent system (ADK)** | Code | Coordinator + 2 sub-agents via `sub_agents=[...]` |
+| 1 | **Multi-agent system (ADK)** | Code | Orchestrator + 2 specialist agents via `AgentTool` |
 | 2 | **MCP Server** | Code | Custom `fastmcp` server exposing catalog/stock/order tools |
 | 3 | **Security / HITL** | Code | Forbidden-claims guardrail + human-approval pause |
 

@@ -32,19 +32,18 @@ def send_reply(reply: str, tool_context: ToolContext) -> dict:
     if not confirmation:
         # First call: ask a human to approve before anything is sent.
         # Surface the guardrail result in the bold hint so it is visible in adk web.
-        if screened["status"] == "ok":
-            hint = "Approve sending this reply?   GUARDRAIL: compliant (no medical claims)."
+        # Base the message on whether the text ACTUALLY changed (some forbidden words are
+        # detection-only and intentionally not rewritten, so "flagged" != "rewritten").
+        rewritten_something = safe_reply != reply
+        if rewritten_something:
+            hint = "Approve sending this reply?   GUARDRAIL: rewrote forbidden claim(s) to stay compliant."
         else:
-            hint = (
-                f"Approve sending this reply?   GUARDRAIL rewrote {len(screened['issues'])} "
-                f"forbidden claim(s): {', '.join(screened['issues'])}."
-            )
+            hint = "Approve sending this reply?   GUARDRAIL: compliant (no medical claims)."
         tool_context.request_confirmation(
             hint=hint,
             payload={
                 "reply": safe_reply,
-                "guardrail": screened["status"],
-                "rewrote": screened["issues"],
+                "guardrail": "rewritten" if rewritten_something else "compliant",
             },
         )
         return {
